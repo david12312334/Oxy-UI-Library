@@ -1,4 +1,4 @@
 # Oxy-UI-Library
-Completly free to use for everyoane :)
+## Completly free to use for everyoane :)
 
-Any errors/issues you encounter using the ui dm @syhook on discord.
+### Any errors/issues you encounter using the ui dm @syhook on discord.
