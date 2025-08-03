@@ -1,0 +1,87 @@
+-- Example for Oxy UI Library
+-- Written by syhook
+-- To use this example, make sure your UI library is accessible via the provided loadstring
+
+-- Load the UI library
+local UI = loadstring(game:HttpGet('https://raw.githubusercontent.com/david12312334/Oxy-UI-Library/refs/heads/main/.lua'))()
+
+
+-- Create the main window
+local Window = UI:CreateWindow({
+    Title = "Oxy UI", -- Window title
+    DefaultMenuKey = "RightControl"   -- Key used to toggle the menu visibility (dont use Right/Left Shift)
+})
+
+
+-- Create a tab
+local visuals = Window:CreateTab("Visuals")
+visuals.Visible = true -- Show the tab by default
+
+
+-- Add a groupbox inside the tab
+local esp = visuals:CreateGroupBox("ESP Options")
+
+
+-- Create a toggle inside the groupbox
+esp:CreateToggle("MyToggle", {
+    Text = "This is a toggle",      -- Label shown next to the checkbox
+    Default = false,                -- Initial state (off)
+    Callback = function(val)        -- Runs when the toggle is switched
+        print("Toggle changed to", val)
+    end
+})
+
+
+-- Create a slider for numeric input
+esp:CreateSlider("MySlider", {
+    Text = "This is my slider!",    -- Label above the slider
+    Default = 3,                    -- Starting value
+    Min = 0,                        -- Minimum value
+    Max = 5,                        -- Maximum value
+    Rounding = 1,                   -- Decimal places
+    Callback = function(val)        -- Runs when the slider is adjusted
+        print("Slider changed to", val)
+    end
+})
+
+
+-- Create a simple button
+esp:CreateButton("Toggle ESP", function()
+    print("ESP toggled")            -- Runs when button is clicked
+end)
+
+
+--[[
+KEYPICKERS TUTORIAL
+
+You can only add keypickers tied next to an toggle not separate like an label keybind.
+Keypicker example:
+
+:CreateKeyPicker('KeyPicker', {
+    Default = 'X',                  -- Default key to trigger toggle
+    Callback = function(Value)      -- Runs when the key is pressed
+        print('[cb] Keybind clicked!', Value)
+    end,
+})
+
+
+How to add it next to an toggle:
+Example:
+
+esp:CreateToggle("MyToggle", {
+  Text = "This is a toggle",      -- Label shown next to the checkbox
+  Default = false,                -- Initial state (off)
+  Callback = function(val)        -- Runs when the toggle is switched
+      print("Toggle changed to", val)
+   end
+}):CreateKeyPicker('KeyPicker', {
+    Default = 'X',
+    Callback = function(Value)
+        print('[cb] Keybind clicked!', Value)
+    end,
+})
+
+
+]]
+
+Thank you for reading.
