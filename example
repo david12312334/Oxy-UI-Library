@@ -3,7 +3,7 @@
 -- To use this example, make sure your UI library is accessible via the provided loadstring
 
 -- Load the UI library
-local UI = loadstring(game:HttpGet('https://raw.githubusercontent.com/david12312334/Oxy-UI-Library/refs/heads/main/.lua'))()
+local UI = loadstring(game:HttpGet('https://pastefy.app/M2AA6ZD9/raw'))()
 
 
 -- Create the main window
